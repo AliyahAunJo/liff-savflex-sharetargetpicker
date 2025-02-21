@@ -245,7 +245,7 @@
 
       function showFlex() {
         const flexContainer = document.getElementById("flex1");
-        flexContainer.innerHTML = ""; // ล้างเนื้อหาเดิม
+        flexContainer.innerHTML = "";
 
         try {
           const flexJson = document.getElementById("textBox2").value;
@@ -929,11 +929,11 @@
           return "";
         }
         return unsafe
-          .replace(/&/g, "&")
-          .replace(/</g, "<")
-          .replace(/>/g, ">")
-          .replace(/"/g, """)
-          .replace(/'/g, "'");
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
       }
 
       function shareListItem(index) {
