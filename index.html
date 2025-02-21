@@ -4,104 +4,171 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LINE SHARE MESSAGE</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="flex2html.css" />
     <script type="text/javascript" src="flex2html.min.js"></script>
     <style>
       body {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-family: "Arial", sans-serif;
       }
-      
-      #flex1 {
-        justify-content:center;
-        align-items:center;
-        margin: 0 auto;
-      }
+
       .container {
+        width: 100%;
         max-width: 600px;
-        background: linear-gradient(135deg, #667eea 20%, #764ba2 50%);
-        border-radius: 15px;
-        padding: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
+
       #pictureUrl {
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       }
-      #flex1 img {
-        max-width: 100%;
+
+      h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
       }
+
+      .form-control {
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        padding: 12px;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .form-control:focus {
+        border-color: #2575fc;
+        box-shadow: 0 0 0 0.2rem rgba(37, 117, 252, 0.25);
+      }
+
+      #flex1,
       #showtext {
-        white-space: pre-wrap;
-        color: #025b23;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
-      button {
+
+      .btn {
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-weight: bold;
+        transition: all 0.3s ease;
         margin: 5px;
-      }
-      #dataList .card {
-        margin-bottom: 10px;
-      }
-      #dataList .card-body {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: #667eea 20%;
-        border-radius: 5px;
-      }
-      #dataList .card-title {
-        color: white;
-        margin-bottom: 0;
-        font-size: 1rem;
-      }
-      #dataList .btn-group {
-        display: flex;
-      }
-      #qr-reader {
-        max-width: 100%;
-      }
-      @media (max-width: 576px) {
-        #dataList .card-body {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        #dataList .btn-group {
-          margin-top: 10px;
-        }
+        color: white !important;
       }
 
-      #qr-reader {
-        max-width: 300px;
-        margin: 20px auto;
+      .btn-danger {
+        background-color: #ff4757;
+        border-color: #ff4757;
       }
-      #qr-reader__scan_region {
-        background: white;
+      .btn-primary {
+        background-color: #2575fc;
+        border-color: #2575fc;
       }
-      #qr-reader__dashboard_section_swaplink {
-        display: none;
+      .btn-warning {
+        background-color: #ffa502;
+        border-color: #ffa502;
       }
-      #qr-reader video {
-        max-width: 100%;
+      .btn-dark {
+        background-color: #2f3542;
+        border-color: #2f3542;
       }
-
+      .btn-info {
+        background-color: #70a1ff;
+        border-color: #70a1ff;
+      }
+      .btn-outline-light {
+        color: #fff;
+        border-color: #fff;
+        background-color: transparent;
+      }
+      .btn-outline-light:hover {
+        background-color: #fff;
+        color: #2575fc !important;
+      }
       .btn-secondary {
-        background-color: #6c757d;
-        border-color: #6c757d;
-        color: white;
+        background-color: #747d8c;
+        border-color: #747d8c;
+      }
+      .btn-success {
+        background-color: #2ed573;
+        border-color: #2ed573;
       }
 
-      .btn-secondary:hover {
-        background-color: #5a6268;
-        border-color: #545b62;
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      #dataList .card {
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        margin-bottom: 15px;
+      }
+
+      #dataList .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      #dataList .card-body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 15px;
+      }
+
+      #dataList .card-title {
+        color: #fff;
+        font-size: 1.1rem;
+        margin-bottom: 0;
+      }
+
+      #dataList .btn-group .btn {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: 0.9rem;
+        color: #333;
+      }
+
+      @media (max-width: 576px) {
+        .container {
+          padding: 20px;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+
+        .btn {
+          padding: 8px 16px;
+          font-size: 0.9rem;
+        }
       }
     </style>
   </head>
@@ -174,7 +241,7 @@
         <button class="btn btn-info" onclick="getLocation()">Get Loc</button>
         <button class="btn btn-info" onclick="sendLocation()">Send Loc</button>
 
-        <button class="btn btn-outline-light" onclick="scanQrCode()">
+        <button class="btn btn-danger" onclick="scanQrCode()">
           Scan QR
         </button>
         <button class="btn btn-secondary" onclick="clearText()">
@@ -245,7 +312,7 @@
 
       function showFlex() {
         const flexContainer = document.getElementById("flex1");
-        flexContainer.innerHTML = "";
+        flexContainer.innerHTML = ""; // ล้างเนื้อหาเดิม
 
         try {
           const flexJson = document.getElementById("textBox2").value;
@@ -288,12 +355,17 @@
           cancelButtonText: "ยกเลิก",
         }).then((result) => {
           if (result.isConfirmed) {
+            // ล้างข้อความใน textboxes
             document.getElementById("textBox1").value = "";
             document.getElementById("textBox2").value = "";
+            // ล้างการแสดงผลใน flex1 และ showtext ด้วย
             document.getElementById("flex1").innerHTML = "";
             document.getElementById("showtext").textContent = "";
+
+            // ซ่อน elements แทนที่จะล้างเนื้อหา
             document.getElementById("flex1").style.display = "none";
             document.getElementById("showtext").style.display = "none";
+
             Swal.fire(
               "ล้างข้อความแล้ว!",
               "ข้อความทั้งหมดถูกล้างและซ่อนเรียบร้อยแล้ว",
@@ -328,6 +400,7 @@
           return;
         }
 
+        // Validate the Flex message structure
         if (!isValidFlexMessage(contents)) {
           Swal.fire({
             icon: "error",
@@ -337,12 +410,14 @@
           return;
         }
 
+        // Prepare the message object
         const messageObj = {
           type: "flex",
           altText: altText || "Flex Message",
           contents: contents,
         };
 
+        // Send the message
         if (liff.isApiAvailable("shareTargetPicker")) {
           liff
             .shareTargetPicker([messageObj])
@@ -371,6 +446,7 @@
         }
       }
 
+      // Helper function to validate Flex Message structure
       function isValidFlexMessage(obj) {
         return (
           obj &&
@@ -511,33 +587,29 @@
         });
       }
 
-      let scanner = null;
-      let isScanning = false;
-
-      function scanQrCode() {
+      async function scanQrCode() {
         const qrReader = document.getElementById("qr-reader");
 
         if (liff.isInClient()) {
+          // สำหรับ LINE app
           try {
-            liff.scanCodeV2().then((result) => {
-              document.getElementById("textBox2").value = result.value;
-              showScanResult(result.value);
-            }).catch((error) => {
-              showScanError(error);
-            });
+            const result = await liff.scanCodeV2();
+            document.getElementById("textBox2").value = result.value;
+            showScanResult(result.value);
           } catch (error) {
             showScanError(error);
           }
         } else {
+          // สำหรับเว็บบราวเซอร์
           qrReader.innerHTML = `
-            <div>
-              <p class="text-white" style="font-weight:bold; font-size:1rem;">เลือกวิธีสแกน QR Code:</p>
-              <button id="cameraBtn" class="btn btn-primary">ใช้กล้อง</button>
-              <input type="file" id="fileInput" accept="image/*" style="display: none;">
-              <button id="fileBtn" class="btn btn-secondary">อัปโหลดรูปภาพ</button>
-            </div>
-            <div id="qrScannerContainer"></div>
-          `;
+      <div>
+        <p class="text-white" style="font-weight:bold; font-size:1rem;">เลือกวิธีสแกน QR Code:</p>
+        <button id="cameraBtn" class="btn btn-primary">ใช้กล้อง</button>
+        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+        <button id="fileBtn" class="btn btn-secondary">อัปโหลดรูปภาพ</button>
+      </div>
+      <div id="qrScannerContainer"></div>
+    `;
 
           document.getElementById("cameraBtn").onclick = startCameraScanner;
           document.getElementById("fileBtn").onclick = () =>
@@ -548,15 +620,15 @@
         }
       }
 
+      let scanner = null;
+
       function startCameraScanner() {
-        if (isScanning) return;
-        
-        const qrScannerContainer = document.getElementById("qrScannerContainer");
-        qrScannerContainer.innerHTML = "";
+        const qrScannerContainer =
+          document.getElementById("qrScannerContainer");
+        qrScannerContainer.innerHTML = ""; // Clear previous content
 
         scanner = new Html5Qrcode("qrScannerContainer");
         const config = { fps: 10, qrbox: { width: 250, height: 250 } };
-        isScanning = true;
 
         scanner
           .start(
@@ -567,10 +639,10 @@
           )
           .catch((error) => {
             console.error("Error starting scanner:", error);
-            isScanning = false;
             showCameraAccessInstructions();
           });
 
+        // เพิ่มปุ่มปิดสแกนเนอร์
         const closeButton = document.createElement("button");
         closeButton.textContent = "ปิดสแกนเนอร์";
         closeButton.className = "btn btn-danger mt-2";
@@ -579,17 +651,15 @@
       }
 
       function stopScanner() {
-        if (scanner && isScanning) {
+        if (scanner) {
           scanner
             .stop()
             .then(() => {
               scanner.clear();
               document.getElementById("qrScannerContainer").innerHTML = "";
-              isScanning = false;
             })
             .catch((error) => console.error("Error stopping scanner:", error));
         }
-        document.getElementById("qr-reader").style.display = "none";
       }
 
       function handleFileUpload(event) {
@@ -632,12 +702,8 @@
       }
 
       function onScanSuccess(decodedText) {
-        if (!isScanning) return;
-        
         document.getElementById("textBox2").value = decodedText;
         showScanResult(decodedText);
-        
-        stopScanner();
         document.getElementById("qr-reader").style.display = "none";
       }
 
@@ -722,6 +788,7 @@
           displayName: profile.displayName,
         };
 
+        // แสดง loading
         Swal.fire({
           title: "กำลังบันทึกข้อมูล...",
           allowOutsideClick: false,
@@ -730,6 +797,7 @@
           },
         });
 
+        // ส่งข้อมูลไปยัง Google Apps Script Web App
         fetch(
           "https://script.google.com/macros/s/AKfycbwZamFXOUzUXp_6XkwFv_Zxcb-pI5KEz3mPD3JnZbz2GjryKp4YIfYI46jFUtF6W6tC/exec",
           {
@@ -772,6 +840,16 @@
           });
       }
 
+      function isValidFlexMessage(obj) {
+        // ตรวจสอบว่าเป็น Flex Message ที่ถูกต้อง
+        return (
+          obj &&
+          (obj.type === "flex" ||
+            (obj.type === "bubble" && obj.body) ||
+            (obj.type === "carousel" && Array.isArray(obj.contents)))
+        );
+      }
+
       function fetchDataList() {
         const url =
           "https://script.google.com/macros/s/AKfycbwZamFXOUzUXp_6XkwFv_Zxcb-pI5KEz3mPD3JnZbz2GjryKp4YIfYI46jFUtF6W6tC/exec";
@@ -786,23 +864,25 @@
               .map((item, index) => {
                 const title = escapeHtml((item && item.title) || "");
                 return `
-                  <div class="card" id="item-${index}">
-                    <div class="card-body">
-                      <h5 class="card-title">${title}</h5>
-                      <div class="btn-group">
-                        <button class="btn btn-sm btn-primary" onclick="shareListItem(${index})">แชร์</button>
-                        <button class="btn btn-sm btn-danger" onclick="deleteListItem(${index})">ลบ</button>
-                        <button class="btn btn-sm btn-info" onclick="showFlexMessage(${index})">แสดง</button>
-                      </div>
-                    </div>
-                  </div>
-                `;
+          <div class="card" id="item-${index}">
+            <div class="card-body">
+              <h5 class="card-title">${title}</h5>
+              <div class="btn-group">
+                <button class="btn btn-sm btn-primary" onclick="shareListItem(${index})">แชร์</button>
+                <button class="btn btn-sm btn-danger" onclick="deleteListItem(${index})">ลบ</button>
+                <button class="btn btn-sm btn-info" onclick="showFlexMessage(${index})">แสดง</button>
+              </div>
+            </div>
+          </div>
+        `;
               })
               .join("");
 
             const dataListElement = document.getElementById("dataList");
             if (dataListElement) {
               dataListElement.innerHTML = listHtml || "<p>ไม่มีข้อมูล</p>";
+            } else {
+              console.error("Element with id 'dataList' not found");
             }
             window.listData = data;
           })
@@ -811,6 +891,8 @@
             const dataListElement = document.getElementById("dataList");
             if (dataListElement) {
               dataListElement.innerHTML = `<p class="text-danger">Error loading data: ${error.message}</p>`;
+            } else {
+              console.error("Element with id 'dataList' not found");
             }
           });
       }
@@ -857,6 +939,7 @@
                 if (typeof flex2html === "function") {
                   flex2html("flex1", flexMessage);
                   flexContainer.style.display = "block";
+                  // ลบ class ที่อาจทำให้เกิดพื้นหลังสีขาว
                   flexContainer.classList.remove("bg-white", "p-2", "rounded");
                   flexContainer.scrollIntoView({ behavior: "smooth" });
                 } else {
@@ -864,6 +947,8 @@
                   flexContainer.innerHTML =
                     '<p class="text-danger">flex2html library is not loaded properly.</p>';
                 }
+              } else {
+                console.error("Flex container not found");
               }
             } else {
               throw new Error("Invalid Flex message structure");
@@ -910,7 +995,7 @@
             deleteItemFromServer(index)
               .then(() => {
                 Swal.fire("ลบแล้ว!", "รายการได้ถูกลบเรียบร้อยแล้ว", "success");
-                fetchDataList();
+                fetchDataList(); // โหลดรายการใหม่หลังจากลบ
               })
               .catch((error) => {
                 console.error("Error deleting item:", error);
@@ -924,6 +1009,7 @@
         });
       }
 
+      // Helper function to escape HTML
       function escapeHtml(unsafe) {
         if (typeof unsafe !== "string") {
           return "";
@@ -933,7 +1019,7 @@
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;")
           .replace(/"/g, "&quot;")
-          .replace(/'/g, "&#39;");
+          .replace(/'/g, "&#039;");
       }
 
       function shareListItem(index) {
@@ -941,6 +1027,7 @@
         if (item && item.text1) {
           try {
             let flexObj = JSON.parse(item.text1);
+            // ตรวจสอบโครงสร้างของ Flex message
             if (
               flexObj &&
               (flexObj.type === "flex" ||
@@ -979,6 +1066,25 @@
         }
       }
 
+      function debugFlexMessage(index) {
+        const item = window.listData[index];
+        if (item && item.text1) {
+          console.log("Flex message data for item " + index + ":", item.text1);
+          try {
+            const flexObj = JSON.parse(item.text1);
+            console.log("Parsed Flex object:", flexObj);
+          } catch (e) {
+            console.error("Error parsing Flex JSON:", e);
+          }
+        } else {
+          console.log("No Flex data found for item " + index);
+        }
+      }
+
+      function debugListData() {
+        console.log("All list data:", window.listData);
+      }
+
       function sendMessage(messageObj) {
         if (liff.isApiAvailable("shareTargetPicker")) {
           liff
@@ -1009,24 +1115,31 @@
       }
 
       function clearInputs() {
+        // ตรวจสอบว่า elements มีอยู่จริงก่อนที่จะกำหนดค่า
         const textBox1 = document.getElementById("textBox1");
         const textBox2 = document.getElementById("textBox2");
 
-        if (textBox1) textBox1.value = "";
-        if (textBox2) textBox2.value = "";
+        if (textBox1) {
+          textBox1.value = "";
+        }
+
+        if (textBox2) {
+          textBox2.value = "";
+        }
       }
 
+      // ฟังก์ชันเพื่อแปลง HTML entities กลับเป็นตัวอักษรปกติ
       function decodeHtml(html) {
         var txt = document.createElement("textarea");
         txt.innerHTML = html;
         return txt.value;
       }
 
+      // โหลดรายการข้อมูลเมื่อเปิดหน้าเว็บ
       fetchDataList();
     </script>
     <script src="https://unpkg.com/html5-qrcode"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.3.1/dist/jsQR.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
